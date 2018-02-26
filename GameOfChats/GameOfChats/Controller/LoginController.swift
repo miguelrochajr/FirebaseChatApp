@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginController: UIViewController {
     
@@ -23,15 +24,48 @@ class LoginController: UIViewController {
         return view
     }()
     
-    let loginRegisterButton: UIButton = {
+    lazy var loginRegisterButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.backgroundColor = UIColor(r: 80, g: 101, b: 161, a: 1)
         btn.setTitle("Register", for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        
+        btn.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
+        
         return btn
     }()
+    
+    @objc func handleRegister(){
+        
+        guard let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text else {
+            print("Form is not valid")
+            return
+        }
+        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+            if error != nil {
+                print(error!)
+                return
+            }
+            
+            guard let uid = user?.uid else {
+                return
+            }
+            
+            // successfully authenticated user
+            let ref = Database.database().reference(fromURL: "https://gameofchats-a22ff.firebaseio.com/")
+            let usersReference = ref.child("users").child(uid)
+            let values = ["name": name, "email": email]
+            usersReference.updateChildValues(values, withCompletionBlock: { (updateError, ref) in
+                if updateError != nil {
+                    print(updateError!)
+                    return
+                }
+                print("Saved user succesfully into Firebase DB!")
+            })
+        }
+    }
     
     let nameTextField: UITextField = {
         let tf = UITextField()

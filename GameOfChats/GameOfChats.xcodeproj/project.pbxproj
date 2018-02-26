@@ -13,6 +13,7 @@
 		F60E3E512043A45300205F1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F60E3E502043A45300205F1C /* Assets.xcassets */; };
 		F60E3E542043A45300205F1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60E3E522043A45300205F1C /* LaunchScreen.storyboard */; };
 		F60E3E5D2043A61A00205F1C /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60E3E5C2043A61A00205F1C /* LoginController.swift */; };
+		F60E3E612043BA6400205F1C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F60E3E602043BA6400205F1C /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F60E3E532043A45300205F1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F60E3E552043A45300205F1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F60E3E5C2043A61A00205F1C /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		F60E3E602043BA6400205F1C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				F60E3E502043A45300205F1C /* Assets.xcassets */,
 				F60E3E522043A45300205F1C /* LaunchScreen.storyboard */,
 				F60E3E552043A45300205F1C /* Info.plist */,
+				F60E3E602043BA6400205F1C /* GoogleService-Info.plist */,
 			);
 			path = GameOfChats;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F60E3E542043A45300205F1C /* LaunchScreen.storyboard in Resources */,
+				F60E3E612043BA6400205F1C /* GoogleService-Info.plist in Resources */,
 				F60E3E512043A45300205F1C /* Assets.xcassets in Resources */,
 				F60E3E4F2043A45300205F1C /* Main.storyboard in Resources */,
 			);
